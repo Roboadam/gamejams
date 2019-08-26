@@ -13,8 +13,7 @@ public class Player : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 movement = Vector3.zero;
 
@@ -37,11 +36,5 @@ public class Player : MonoBehaviour
 
         vel = movement.normalized * 2;
         rigidbody.velocity = vel;
-    }
-
-    void FixedUpdate()
-    {
-        Debug.Log("velocity changed to " + vel);
-
     }
 }
