@@ -17,10 +17,21 @@ public class Ghost : MonoBehaviour
         new Vector3(4.32f, 1.54f, 0.23f)
     };
 
+    public void Stop()
+    {
+        agent.isStopped = true;
+    }
+
+    public void Resume()
+    {
+        agent.isStopped = false;
+    }
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.destination = intermediateStarts[GhostIndex % intermediateStarts.Length];
+        player.GetComponent<Player>().ghosts.Add(this);
         Debug.Log("Destination " + agent.destination);
     }
 
