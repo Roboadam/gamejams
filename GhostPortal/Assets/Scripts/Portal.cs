@@ -6,7 +6,7 @@ public class Portal : MonoBehaviour
 {
     public GameObject ghostPrefab;
     public GameObject player;
-    private int numGhosts = 0;
+    private int numGhosts = 1;
     public bool pause = false;
     // Start is called before the first frame update
     void Start()

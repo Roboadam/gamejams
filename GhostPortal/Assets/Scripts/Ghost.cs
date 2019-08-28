@@ -35,7 +35,6 @@ public class Ghost : MonoBehaviour
         Debug.Log("Destination " + agent.destination);
     }
 
-    // Update is called once per frame
     void Update()
     {
         Debug.Log("distance = " + agent.remainingDistance + ":" + reachedIntermediatePoint + " destination:" + agent.destination + " position:" + transform.position);

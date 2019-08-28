@@ -12,19 +12,20 @@ public class Player : MonoBehaviour
     public GameObject introText;
     public List<Ghost> ghosts = new List<Ghost>();
     private bool pause = false;
+    private Vector3 startPos;
 
     // Start is called before the first frame update
     void Start()
     {
         PauseGame();
         rigidbody = GetComponent<Rigidbody>();
+        startPos = this.transform.position;
     }
 
     private void Update()
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            introText.SetActive(false);
             ResumeGame();
         }
     }
@@ -46,21 +47,25 @@ public class Player : MonoBehaviour
 
     private void PauseGame()
     {
-        foreach(Ghost ghost in ghosts)
-        {
-            ghost.Stop();
-        }
 
-        portal.GetComponent<Portal>().pause = true;
+    //    portal.GetComponent<Portal>().pause = true;
         this.pause = true;
         Time.timeScale = 0;
     }
 
     private void ResumeGame()
     {
-        portal.GetComponent<Portal>().pause = false;
+        foreach(Ghost ghost in ghosts)
+        {
+            Destroy(ghost);
+        }
+        //portal.GetComponent<Portal>().pause = false;
         this.pause = false;
         Time.timeScale = 1;
+        this.transform.position = startPos;
+        introText.SetActive(false);
+        winText.SetActive(false);
+        gameOverText.SetActive(false);
     }
 
     void FixedUpdate()
