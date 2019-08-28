@@ -27,7 +27,8 @@ public class Ghost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!reachedIntermediatePoint && agent.remainingDistance < 0.01f)
+        Debug.Log("distance = " + agent.remainingDistance + ":" + reachedIntermediatePoint + " destination:" + agent.destination + " position:" + transform.position);
+        if(!reachedIntermediatePoint && agent.remainingDistance < 0.5f)
         {
             reachedIntermediatePoint = true;
             Debug.Log("Reached intermediate point");
