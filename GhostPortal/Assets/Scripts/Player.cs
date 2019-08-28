@@ -47,8 +47,6 @@ public class Player : MonoBehaviour
 
     private void PauseGame()
     {
-
-    //    portal.GetComponent<Portal>().pause = true;
         this.pause = true;
         Time.timeScale = 0;
     }
@@ -57,9 +55,8 @@ public class Player : MonoBehaviour
     {
         foreach(Ghost ghost in ghosts)
         {
-            Destroy(ghost);
+            Destroy(ghost.gameObject);
         }
-        //portal.GetComponent<Portal>().pause = false;
         this.pause = false;
         Time.timeScale = 1;
         this.transform.position = startPos;
