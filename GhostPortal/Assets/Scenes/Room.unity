@@ -1080,7 +1080,10 @@ MonoBehaviour:
   m_Text: 'GAME OVER!!!
 
 
-    The ghosts have sent you through the portal into the inside out!'
+    The ghosts have sent you through the portal into the inside out!
+
+
+    Press space to start over.'
 --- !u!222 &1225109264
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1388,7 +1391,10 @@ MonoBehaviour:
   m_Text: 'YOU WIN!!!
 
 
-    You have shut off the portal, the ghosts will return to the inside out'
+    You have shut off the portal, the ghosts will return to the inside out.
+
+
+    Press space to start over.'
 --- !u!222 &2046979429
 CanvasRenderer:
   m_ObjectHideFlags: 0

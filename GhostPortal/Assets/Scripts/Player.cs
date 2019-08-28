@@ -57,6 +57,9 @@ public class Player : MonoBehaviour
         {
             Destroy(ghost.gameObject);
         }
+
+        ghosts = new List<Ghost>();
+
         this.pause = false;
         Time.timeScale = 1;
         this.transform.position = startPos;
