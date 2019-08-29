@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public List<Ghost> ghosts = new List<Ghost>();
     private bool pause = false;
     private Vector3 startPos;
+    private Vector3 facing = Vector3.forward;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,11 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.Space))
         {
             ResumeGame();
+        }
+
+        if(Input.GetKey(KeyCode.Q))
+        {
+            Application.Quit();
         }
     }
 
@@ -77,6 +83,7 @@ public class Player : MonoBehaviour
 
         Vector3 movement = Vector3.zero;
 
+
         if(Input.GetKey(KeyCode.W))
         {
             movement += Vector3.forward;
@@ -93,6 +100,13 @@ public class Player : MonoBehaviour
         {
             movement += Vector3.right;
         }
+
+        if(movement != Vector3.zero)
+        {
+            facing = movement;
+        }
+
+        this.transform.rotation = Quaternion.LookRotation(facing, Vector3.up);
 
         vel = movement.normalized * 2;
         rigidbody.velocity = vel;
