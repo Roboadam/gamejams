@@ -12,9 +12,9 @@ public class Ghost : MonoBehaviour
     public int GhostIndex { get; set; } = 0;
 
     private static Vector3[] intermediateStarts = new Vector3[] {
-        new Vector3(-0.96f, 1.54f, 13.04f),
-        new Vector3(-11.14f, 1.54f, 8.06f),
-        new Vector3(4.32f, 1.54f, 0.23f)
+        new Vector3(0.13f, 1.54f, 9.29f),
+        new Vector3(-8.77f, 1.54f, 7.87f),
+        new Vector3(2.02f, 1.54f, 1.05f)
     };
 
     public void Stop()

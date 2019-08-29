@@ -17,10 +17,10 @@ public class Portal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!pause && Time.time > numGhosts * 5)
+        if(!pause && Time.time > numGhosts * 4)
         {
             Debug.Log("Creating ghost " + numGhosts);
-            GameObject ghostGameObject = Instantiate(ghostPrefab, new Vector3(6.82f, 0.84f, 4.82f), Quaternion.identity);
+            GameObject ghostGameObject = Instantiate(ghostPrefab, new Vector3(0.66f, 0.84f, 13.7f), Quaternion.identity);
             ghostGameObject.GetComponent<Ghost>().GhostIndex = numGhosts;
             ghostGameObject.GetComponent<Ghost>().player = player;
             numGhosts++;

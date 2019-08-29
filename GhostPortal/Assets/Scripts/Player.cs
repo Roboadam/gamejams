@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
 
         this.transform.rotation = Quaternion.LookRotation(facing, Vector3.up);
 
-        vel = movement.normalized * 2;
+        vel = movement.normalized * 3f;
         rigidbody.velocity = vel;
     }
 }
